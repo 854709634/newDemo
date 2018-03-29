@@ -5,7 +5,6 @@ import {
 export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 	type = type.toUpperCase();
 	url = baseUrl + url;
-
 	if (type == 'GET') {
 		let dataStr = ''; //数据拼接字符串
 		Object.keys(data).forEach(key => {
@@ -17,7 +16,6 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 			url = url + '?' + dataStr;
 		}
 	}
-
 	// if (window.fetch && method == 'fetch') {
 	if (false) {
 		let requestConfig = {
@@ -30,13 +28,11 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 			mode: "cors",
 			cache: "force-cache"
 		}
-
 		if (type == 'POST') {
 			Object.defineProperty(requestConfig, 'body', {
 				value: JSON.stringify(data)
 			})
 		}
-
 		try {
 			const response = await fetch(url, requestConfig);
 			const responseJson = await response.json();
@@ -57,7 +53,6 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 			if (type == 'POST') {
 				sendData = JSON.stringify(data);
 			}
-
 			requestObj.open(type, url, true);
 			requestObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			requestObj.send(sendData);

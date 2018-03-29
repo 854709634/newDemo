@@ -8,6 +8,7 @@
  */
 
 let baseUrl = '';
+// let baseUrl = 'http://localhost:8888';
 let routerMode = 'history';
 // let imgBaseUrl = 'http://images.cangdu.org/';
 let imgBaseUrl = 'http://cangdu.org:8001/img/';
